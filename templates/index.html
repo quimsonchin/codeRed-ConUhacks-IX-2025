@@ -1,52 +1,160 @@
 <!DOCTYPE html>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <html Lang="en">
     <head>
         <Title> Wellness Companion </Title>
     </head>
+=======
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Companion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+>>>>>>> Stashed changes
     <style>
         body {
-            background-color: #9e42;
-            font-family: Cursive, sans-serif;
-            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
         }
-        .center-content {
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 30px 0;
             text-align: center;
+            font-family: 'Pacifico', cursive;
         }
-        img {
+
+        header img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 2.5em;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: normal;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .chatbox {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+
+        button {
+            width: 15%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .offline-cat {
             display: block;
-            margin: 0 auto;
+            margin: 30px auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
-    <body>
-        <div style="text-align: center;"></div> 
-        <img src="https://logos-world.net/wp-content/uploads/2023/05/Sun-Life-Logo.png" alt="IMAGE NOT FOUND" width = "300px" >
-            <h1 > 
-                Wellness Companion Chatbox 
-            </h1>
-            <h3> Welcome! </h3>
-            
-            <p> Our mission is to provide a safe and supportive space for individuals 
-                to discuss their mental health and wellness. Whether you're looking to connect with others, share your story, or 
-                simply want to support our cause, you've come to the right place. </p>
-        </div>
-        <hr>
-        <hr>
-        <div>
-            <h2> Personal Chatbox </h2>
-        </div>
-        
+</head>
+
+<body>
+
+    <header>
+        <img src="https://logos-world.net/wp-content/uploads/2023/05/Sun-Life-Logo.png" alt="Company Logo">
+        <h1>Wellness Companion Chatbox</h1>
+        <h3>Welcome! Let's start your journey to financial wellness.</h3>
+    </header>
+
+    <div class="content">
+        <p>Our mission is to provide a safe and supportive space for individuals to discuss their financial wellness and
+            mental health. Whether you're looking to connect with others, share your story, or receive expert AI-powered
+            advice, you've come to the right place.</p>
+    </div>
+
+    <hr>
+
+    <div class="content chatbox">
+        <h2>Personal Chatbox</h2>
+
         <form id="chatForm" onsubmit="return sendMessage()">
-            <input id="myMessage" autocomplete="off" placeholder="Start Typing...">
+            <input type="text" id="myMessage" autocomplete="off" placeholder="Start Typing..." required>
             <button type="submit">Send</button>
         </form>
-        <br>
-        <hr>
-        <hr>
-        
-        <p> Here is a cute cat incase out Chatbox is offline: </p>
-        <img src="https://cdn.pixabay.com/photo/2013/12/12/03/09/kitten-227011_1280.jpg" alt="Orange Cat Picture NOT FOUND" width = "150px">
-    </body>
+    </div>
+
+    <hr>
+
+    <div class="content">
+        <p>If our chatbox is offline, here's a cute cat to cheer you up!</p>
+        <img src="https://cdn.pixabay.com/photo/2013/12/12/03/09/kitten-227011_1280.jpg" alt="Cute Orange Cat" width="150px" class="offline-cat">
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Wellness Companion. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
 
 =======
 <html lang="en">
