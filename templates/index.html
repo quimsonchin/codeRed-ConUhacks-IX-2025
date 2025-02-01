@@ -117,60 +117,49 @@
     </style>
 </head>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbox</title>
+</head>
 <body>
-
-    <header>
-        <img src="https://logos-world.net/wp-content/uploads/2023/05/Sun-Life-Logo.png" alt="Company Logo">
-        <h1>Wellness Companion Chatbox</h1>
-        <h3>Welcome! Let's start your journey to financial wellness.</h3>
-    </header>
-
-    <div class="content">
-        <p>Our mission is to provide a safe and supportive space for individuals to discuss their financial wellness and
-            mental health. Whether you're looking to connect with others, share your story, or receive expert AI-powered
-            advice, you've come to the right place.</p>
-    </div>
-
-    <hr>
 
     <div class="content chatbox">
         <h2>Personal Chatbox</h2>
 
-        <form id="chatForm" onsubmit="return sendMessage()">
-            <input type="text" id="myMessage" autocomplete="off" placeholder="Start Typing..." required>
+        <form method="POST">
+            <input type="text" name="message" autocomplete="off" placeholder="Start Typing..." required>
             <button type="submit">Send</button>
         </form>
     </div>
 
     <hr>
 
-    <div class="content">
-        <p>If our chatbox is offline, here's a cute cat to cheer you up!</p>
-        <img src="https://cdn.pixabay.com/photo/2013/12/12/03/09/kitten-227011_1280.jpg" alt="Cute Orange Cat" width="150px" class="offline-cat">
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Wellness Companion. All rights reserved.</p>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </footer>
-
+    {% if ai_response %}
+        <p><strong>AI says:</strong> {{ ai_response }}</p>
+    {% endif %}
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const userMessage = document.querySelector("input[name='message']").value;
+    
+            fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.response) {
+                    const chatResponse = document.createElement("p");
+                    chatResponse.innerHTML = `<strong>AI says:</strong> ${data.response}`;
+                    document.body.appendChild(chatResponse);
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
 </body>
-
-=======
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chatbot</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <div class="chat-container">
-        <div id="chat-box"></div>
-        <input type="text" id="user-input" placeholder="Type a message...">
-        <button onclick="sendMessage()">Send</button>
-    </div>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-</body>
->>>>>>> Stashed changes
 </html>
